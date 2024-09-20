@@ -2,7 +2,7 @@
 
 ## Como usar este repositório?
 
-1. Realize a instalação do [Docker](https://docs.docker.com/engine/install/)
+1. Realize a instalação do [Docker](https://docs.docker.com/engine/install/).
 2. Clone o repositório:
 ```bash
 git clone https://github.com/rbsilmann/database_lab.git
