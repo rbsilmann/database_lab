@@ -1,0 +1,34 @@
+services:
+  postgresql:
+    hostname: pgsql-15
+    container_name: pgsql-15
+    image: postgres:15-alpine
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=senhasupersegura
+      - POSTGRES_DB=database_lab
+      - PGDATA=/pgsql/15/data
+    volumes:
+      - pgsql_data:/pgsql/15/data
+    networks:
+      - pgsql_net
+  
+  pgadmin:
+    hostname: pgadmin
+    container_name: pgadmin
+    image: dpage/pgadmin4:latest
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=database_lab@email.com
+      - PGADMIN_DEFAULT_PASSWORD=senhaaindamaissegura
+    ports:
+      - 8500:80
+    depends_on:
+      - postgresql
+    networks:
+      - pgsql_net
+
+volumes:
+  pgsql_data:
+
+networks:
+  pgsql_net:
