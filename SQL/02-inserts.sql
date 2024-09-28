@@ -37,7 +37,7 @@ INSERT INTO alunos (primeiro_nome, ultimo_nome, idade) VALUES ('Felipe', 'Costa'
 INSERT INTO alunos (primeiro_nome, ultimo_nome, idade) VALUES ('Gabriela', 'Rocha', 19);
 INSERT INTO alunos (primeiro_nome, ultimo_nome, idade) VALUES ('Hugo', 'Mendes', 24);
 INSERT INTO alunos (primeiro_nome, ultimo_nome, idade) VALUES ('Ingrid', 'Santos', 23);
-INSERT INTO alunos (primeiro_nome, ultimo_nome, idade) VALUES ('Juliana Alves', 21);
+INSERT INTO alunos (primeiro_nome, ultimo_nome, idade) VALUES ('Juliana', 'Alves', 21);
 INSERT INTO alunos (primeiro_nome, ultimo_nome, idade) VALUES ('Kevin', 'Lima', 22);
 INSERT INTO alunos (primeiro_nome, ultimo_nome, idade) VALUES ('Laura', 'Castro', 20);
 INSERT INTO alunos (primeiro_nome, ultimo_nome, idade) VALUES ('Marcos', 'Oliveira', 24);
