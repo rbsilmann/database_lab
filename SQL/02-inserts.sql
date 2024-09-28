@@ -1,3 +1,12 @@
+WITH dados_json AS (
+    SELECT '{"primeiro_nome": "Lucas", "ultimo_nome": "Silva", "idade": 22}'::json AS dados
+)
+INSERT INTO alunos (primeiro_nome, ultimo_nome, idade)
+SELECT (json_populate_record(NULL::alunos, dados)).primeiro_nome,
+       (json_populate_record(NULL::alunos, dados)).ultimo_nome,
+       (json_populate_record(NULL::alunos, dados)).idade
+FROM dados_json;
+
 INSERT INTO alunos (primeiro_nome, ultimo_nome, idade) VALUES ('Ana', 'Silva', 20);
 INSERT INTO alunos (primeiro_nome, ultimo_nome, idade) VALUES ('Ana', 'Souza', 50);
 INSERT INTO alunos (primeiro_nome, ultimo_nome, idade) VALUES ('Carlos', 'Santos', 22);
