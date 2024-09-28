@@ -5,8 +5,8 @@ services:
     image: postgres:15-alpine
     environment:
       - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=senhasupersegura
-      - POSTGRES_DB=database_lab
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=postgres
       - PGDATA=/pgsql/15/data
     volumes:
       - pgsql_data:/pgsql/15/data
@@ -18,14 +18,54 @@ services:
     container_name: pgadmin
     image: dpage/pgadmin4:latest
     environment:
-      - PGADMIN_DEFAULT_EMAIL=database_lab@email.com
-      - PGADMIN_DEFAULT_PASSWORD=senhaaindamaissegura
+      - PGADMIN_DEFAULT_EMAIL=admin@email.com
+      - PGADMIN_DEFAULT_PASSWORD=postgres
     ports:
       - 8500:80
     depends_on:
       - postgresql
     networks:
       - pgsql_net
+
+  # exporter:
+  #   hostname: exporter
+  #   container_name: exporter
+  #   image: bitnami/postgres-exporter:0.15.0
+  #   environment:
+  #     - DATA_SOURCE_USER=postgres
+  #     - DATA_SOURCE_PASS=postgres
+  #     - DATA_SOURCE_URI=pgsql-15:5432/postgres?sslmode=disable
+  #   ports:
+  #     - 9187:9187
+  #   depends_on:
+  #     - postgresql
+  #   networks:
+  #     - pgsql_net
+
+  # prometheus:
+  #   hostname: prometheus
+  #   container_name: prometheus
+  #   image: prom/prometheus:latest
+  #   volumes:
+  #     - ./prometheus.yml:/etc/prometheus/prometheus.yml
+  #   ports:
+  #     - 9090:9090
+  #   networks:
+  #     - pgsql_net
+
+  # # Dash recomendado: 9628
+  # grafana:
+  #   hostname: grafana
+  #   container_name: grafana
+  #   image: grafana/grafana:latest
+  #   ports:
+  #     - 3000:3000
+  #   depends_on:
+  #     - prometheus
+  #   networks:
+  #     - pgsql_net
+  #   environment:
+  #     - GF_SECURITY_ADMIN_PASSWORD=admin
 
 volumes:
   pgsql_data:
