@@ -1,0 +1,4 @@
+-- Windows
+-- pg_dump -U backup_user -p 8745 -h 152.67.48.7 -d vr -FC > C:/vr.backup
+-- Linux / MacOS
+-- pg_dump -U backup_user -p 8745 -h 152.67.48.7 -d vr -FC > $HOME/vr.backup
