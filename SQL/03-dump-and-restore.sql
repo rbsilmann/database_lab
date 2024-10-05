@@ -1,4 +1,6 @@
 -- Windows
--- pg_dump -U backup_user -p 8745 -h 152.67.48.7 -d vr -FC > C:/vr.backup
+-- pg_dump -U backup_user -p 8745 -h 152.67.48.7 -d vr -Fc > C:/vr.backup
+-- pg_restore -U postgres -p 5432 -d vr -v -Fc C:/vr.backup
 -- Linux / MacOS
--- pg_dump -U backup_user -p 8745 -h 152.67.48.7 -d vr -FC > $HOME/vr.backup
+-- pg_dump -U backup_user -p 8745 -h 152.67.48.7 -d vr -Fc > $HOME/vr.backup
+-- pg_restore -U postgres -p 5432 -d vr -v -Fc $HOME/vr.backup
