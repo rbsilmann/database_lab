@@ -1,15 +1,15 @@
 services:
   postgresql:
-    hostname: pgsql-15
-    container_name: pgsql-15
-    image: postgres:15-alpine
+    hostname: pgsql-14
+    container_name: pgsql-14
+    image: postgres:14-alpine
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
       - POSTGRES_DB=postgres
-      - PGDATA=/pgsql/15/data
+      - PGDATA=/pgsql/14/data
     volumes:
-      - pgsql_data:/pgsql/15/data
+      - pgsql_data:/pgsql/14/data
     networks:
       - pgsql_net
   
@@ -34,7 +34,7 @@ services:
   #   environment:
   #     - DATA_SOURCE_USER=postgres
   #     - DATA_SOURCE_PASS=postgres
-  #     - DATA_SOURCE_URI=pgsql-15:5432/postgres?sslmode=disable
+  #     - DATA_SOURCE_URI=pgsql-14:5432/postgres?sslmode=disable
   #   ports:
   #     - 9187:9187
   #   depends_on:
