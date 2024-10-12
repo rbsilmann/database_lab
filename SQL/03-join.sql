@@ -54,3 +54,36 @@ SELECT a, fruta_a,
 	b, fruta_b
 FROM cesta_a
 FULL JOIN cesta_b ON fruta_a = fruta_b;
+
+-- Exemplo sistema
+SELECT  b.descricao AS descricao_nome_banco, 
+        bc.*
+FROM banco AS b
+INNER JOIN bancoconfiguracao bc ON b.id = bc.id_banco
+ORDER BY descricao_nome_banco;
+
+-- Produto cartesiano
+CREATE TABLE cross_a (
+    numeros INT NOT NULL
+);
+
+CREATE TABLE cross_b (
+    letras VARCHAR (100) NOT NULL
+);
+
+INSERT INTO cross_a (numeros)
+VALUES
+    (1),
+    (2),
+    (3);
+
+INSERT INTO cross_b (letras)
+VALUES
+    ('a'),
+    ('b'),
+    ('c');
+
+SELECT  a.numeros, 
+        b.letras
+FROM cross_a AS a
+CROSS JOIN cross_b AS b;
