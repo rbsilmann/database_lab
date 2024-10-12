@@ -83,7 +83,7 @@ VALUES
     ('b'),
     ('c');
 
-SELECT  a.numeros, 
-        b.letras
+SELECT a.numeros, 
+    b.letras
 FROM cross_a AS a
 CROSS JOIN cross_b AS b;
