@@ -49,3 +49,6 @@ SELECT	i.relname "Nome da Tabela",
  		pg_size_pretty(pg_relation_size(indexrelid)) "Tamanho do Indice"
 FROM pg_stat_all_indexes i JOIN pg_class c ON i.relid=c.oid 
 WHERE i.relname='estoque';
+
+CREATE INDEX IF NOT EXISTS idx1_estoque
+    ON public.estoque (data) WHERE data > '2024-04-25';
