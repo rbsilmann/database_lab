@@ -29,6 +29,13 @@ ANALYZE vendas;
 -- Exibir o novo planejamento e o novo tempo de execução
 EXPLAIN ANALYZE SELECT * FROM vendas WHERE id_produto = 50;
 
+-- pgbench
+-- Com o banco criado, inicialize as tabelas do utilitário
+-- pgbench -i -s 10 -U postgres [nome do banco]
+-- Primeiro teste com 10 conexões, 2 threads e 30 segundos
+-- pgbench -c 10 -j 2 -T 30 -U postgres [nome do banco]
+-- Segundo teste com os mesmos parâmetros mas usando uma consulta nossa
+-- pgbench -c 10 -j 2 -T 30 -f ./SQL/09-test.sql -U postgres [nome do banco]
 
 -- https://github.com/jfcoz/postgresqltuner
 
@@ -38,3 +45,8 @@ EXPLAIN ANALYZE SELECT * FROM vendas WHERE id_produto = 50;
 -- Persistência:
 -- echo "vm.overcommit_ratio=90" | sudo tee -a /etc/sysctl.conf
 -- echo "vm.overcommit_memory=2" | sudo tee -a /etc/sysctl.conf
+
+-- https://github.com/darold/pgbadger
+
+-- sudo apt -y install pgbadger
+-- sudo yum -y install pgbadger
