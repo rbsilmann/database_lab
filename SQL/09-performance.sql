@@ -52,3 +52,5 @@ EXPLAIN ANALYZE SELECT * FROM vendas WHERE id_produto = 50;
 
 -- Configuração:
 -- https://github.com/rbsilmann/pg-badger
+
+-- select name, setting, boot_val, context from pg_settings where setting <> boot_val;
