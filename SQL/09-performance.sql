@@ -54,3 +54,26 @@ EXPLAIN ANALYZE SELECT * FROM vendas WHERE id_produto = 50;
 -- https://github.com/rbsilmann/pg-badger
 
 -- select name, setting, boot_val, context from pg_settings where setting <> boot_val;
+
+-- Seq Scan (Sequential Scan):
+-- Leitura sequencial de todas as linhas da tabela.
+-- Ideal para tabelas pequenas ou consultas que precisam de muitos dados.
+
+-- Index Scan:
+-- Utilize um índice para encontrar as linhas necessárias.
+-- Mais eficiente que o Seq Scan quando a consulta retorna poucas linhas.
+
+-- Bitmap Index Scan:
+-- Usado para consultas que retornam muitas linhas, combina o uso de índices e operações em memória.
+
+-- Hash Join vs. Nested Loop:
+-- Hash Join:
+-- Criado para unir tabelas grandes com base em uma chave.
+-- Nested Loop:
+-- Iteração para cada linha da tabela externa, buscando correspondência na interna. Funciona bem para tabelas pequenas.
+
+-- Aggregation:
+-- GroupAggregate:
+-- Utilizado para agrupamentos simples.
+-- HashAggregate:
+-- Usa tabelas hash para acelerar agregações em grandes conjuntos de dados.
