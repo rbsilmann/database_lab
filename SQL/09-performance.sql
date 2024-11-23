@@ -50,3 +50,6 @@ EXPLAIN ANALYZE SELECT * FROM vendas WHERE id_produto = 50;
 
 -- sudo apt -y install pgbadger
 -- sudo yum -y install pgbadger
+
+-- Configuração:
+-- https://github.com/rbsilmann/pg-badger
