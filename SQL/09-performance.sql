@@ -6,7 +6,6 @@ CREATE TABLE vendas (
     data_venda DATE
 );
 
-
 -- Gerar registros aleatórios
 INSERT INTO vendas (id_produto, valor, data_venda)
 SELECT
