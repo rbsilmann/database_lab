@@ -77,9 +77,9 @@ INSERT INTO categorias (nome)
 VALUES ('Eletrônicos'),
     ('Móveis');
 -- Exemplo manual:
-CREATE SEQUENCE categoria_id_seq START 1 INCREMENT 1;
+CREATE SEQUENCE categoria2_id_seq START 1 INCREMENT 1;
 CREATE TABLE categorias2 (
-    id INTEGER DEFAULT nextval('categoria_id_seq'),
+    id INTEGER DEFAULT nextval('categoria2_id_seq'),
     nome VARCHAR(50)
 );
 INSERT INTO categorias2 (nome)
